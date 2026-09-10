@@ -2,14 +2,14 @@
   "name": "langcorrector",
   "displayName": "LangCorrector",
   "description": "Corrige el lenguaje humano dentro de strings, logs y JSX — sin tocar variables, funciones ni clases. Funciona en TypeScript, JavaScript, C#, Java, Kotlin, Go, Rust, C, C++, Swift, Dart, PHP, Python y Ruby. Español, inglés, francés y alemán incluidos.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "publisher": "langcorrector",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TU-USUARIO/LangCorrector.git",
+    "url": "https://github.com/cristiancastineiras/langcorrector.git",
     "directory": "extensions/langcorrector"
   },
   "icon": "logo.png",

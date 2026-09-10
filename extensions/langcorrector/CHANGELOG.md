@@ -5,6 +5,10 @@ Los releases reales se gestionan con [changesets](../../.changeset/README.md).
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-09-10
+
+Primera release pública.
+
 ### Changed
 
 - Reestructurado de "una extensión por idioma" a **una extensión + motor

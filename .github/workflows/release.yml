@@ -1,0 +1,61 @@
+name: Release
+
+# Se dispara al empujar un tag "v<major>.<minor>.<patch>" (p. ej. v0.1.0).
+# Compila, testea, empaqueta el .vsix de la extensión y publica un GitHub
+# Release con ese .vsix como asset, usando el GITHUB_TOKEN que Actions ya
+# provee — no hace falta ningún secreto adicional.
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Verificar que el tag coincide con la versión de la extensión
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PKG_VERSION=$(node -p "require('./extensions/langcorrector/package.json').version")
+          if [ "$TAG_VERSION" != "$PKG_VERSION" ]; then
+            echo "El tag $GITHUB_REF_NAME no coincide con la versión de extensions/langcorrector/package.json ($PKG_VERSION)" >&2
+            exit 1
+          fi
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm build
+      - run: pnpm test
+      - run: pnpm --filter langcorrector package
+
+      - name: Extraer notas del CHANGELOG
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          awk -v hdr="## [$VERSION]" '
+            index($0, hdr) == 1 { found=1; next }
+            found && index($0, "## [") == 1 { exit }
+            found { print }
+          ' extensions/langcorrector/CHANGELOG.md > release-notes.md
+          if [ ! -s release-notes.md ]; then
+            echo "(sin entrada en el CHANGELOG para $VERSION)" > release-notes.md
+          fi
+
+      - name: Crear GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: LangCorrector ${{ github.ref_name }}
+          body_path: release-notes.md
+          files: extensions/langcorrector/*.vsix
