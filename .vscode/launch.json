@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Ejecutar LangCorrector",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/extensions/langcorrector",
+        "${workspaceFolder}/extensions/langcorrector/sample"
+      ],
+      "outFiles": ["${workspaceFolder}/extensions/langcorrector/dist/**/*.cjs"],
+      "preLaunchTask": "langcorrector: build"
+    }
+  ]
+}

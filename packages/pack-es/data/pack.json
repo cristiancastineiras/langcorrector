@@ -1,0 +1,18 @@
+{
+  "locale": "es",
+  "displayName": "Español",
+  "version": "1.2.0",
+  "silentPrefixes": ["h"],
+  "license": "MPL-1.1",
+  "source": "Diccionario ortográfico es_ES de https://github.com/LibreOffice/dictionaries (carpeta es/, commit vigente en master a 2026-09-10). Tri-licenciado GPLv3/LGPLv3/MPL-1.1 a elección de quien redistribuye — LangCorrector lo usa bajo MPL-1.1. Ver ../NOTICE.md.",
+  "files": {
+    "aff": "es_ES.aff",
+    "dic": "es_ES.dic",
+    "phraseRules": "phrase-rules.json"
+  },
+  "checksums": {
+    "es_ES.aff": "e73a9bf8e1383f4986a5dc9e2fbed49371c0c61f511c626d15586bd433c1cad9",
+    "es_ES.dic": "6975dddec3d5d2c676069537bc67b4b5f786c65c5d4cf6703a82acf779ac9ec1",
+    "phrase-rules.json": "66aa09014a33c7c53ecdec9bd930b5de5465ddb1e4321298240dab7f47c46b5d"
+  }
+}

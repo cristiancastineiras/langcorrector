@@ -1,0 +1,7 @@
+packages:
+  # Cada extensión de VS Code es un paquete por idioma: extensions/vscode-es,
+  # extensions/vscode-en, ... — nunca una extensión con selector de idioma.
+  - "extensions/*"
+  # Lógica compartida (packages/core) + un motor de corrección por idioma
+  # (packages/lang-es, packages/lang-en, ...).
+  - "packages/*"

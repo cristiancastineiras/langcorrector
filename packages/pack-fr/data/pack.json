@@ -1,0 +1,17 @@
+{
+  "locale": "fr",
+  "displayName": "Français",
+  "version": "1.1.0",
+  "license": "MPL-2.0",
+  "source": "Dictionnaire orthographique fr de https://github.com/LibreOffice/dictionaries (dossier fr_FR/dictionaries/, fr.aff + fr.dic), sous licence MPL-2.0. Voir ../NOTICE.md.",
+  "files": {
+    "aff": "fr.aff",
+    "dic": "fr.dic",
+    "phraseRules": "phrase-rules.json"
+  },
+  "checksums": {
+    "fr.aff": "c176610cd5dc4846806a65ddd029f422d87978bf58f224aa44222662a16a2de5",
+    "fr.dic": "b78a868e31dd6e373b6c3217969afb898a9acde828a5e7ef97308da42218c88c",
+    "phrase-rules.json": "a8cb36338b453009e1e9b1044e511cdba856283b84e2c0e1b7e51a1cdc910959"
+  }
+}

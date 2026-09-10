@@ -1,0 +1,30 @@
+[
+  {
+    "id": "grammar-of-have",
+    "pattern": "\\b(would|could|should|might|must) of\\b",
+    "flags": "gi",
+    "replacement": "$1 have",
+    "message": "\"$1 of\" is almost always a mishearing of \"$1 have\"."
+  },
+  {
+    "id": "repeated-word",
+    "pattern": "\\b(\\p{L}+)\\s+\\1\\b",
+    "flags": "giu",
+    "replacement": "$1",
+    "message": "Repeated word: \"$1\"."
+  },
+  {
+    "id": "punctuation-double-space",
+    "pattern": "  +",
+    "flags": "g",
+    "replacement": " ",
+    "message": "Double space."
+  },
+  {
+    "id": "punctuation-missing-space-after",
+    "pattern": "([,;:])(?=\\p{L})",
+    "flags": "gu",
+    "replacement": "$1 ",
+    "message": "Missing space after \"$1\"."
+  }
+]

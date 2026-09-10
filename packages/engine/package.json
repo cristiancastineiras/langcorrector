@@ -1,0 +1,34 @@
+{
+  "name": "@langcorrector/engine",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Motor de corrección genérico e independiente del idioma: interpreta un LoadedLanguagePack (diccionario Hunspell + reglas de gramática en JSON, ver @langcorrector/pack-loader) e implementa el contrato LanguageCorrector de @langcorrector/core. Añadir un idioma es escribir un pack, no código.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "oxlint src",
+    "test": "node --test dist/*.test.js",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@langcorrector/core": "workspace:*",
+    "@langcorrector/pack-loader": "workspace:*",
+    "nspell": "^2.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/nspell": "^2.1.6",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.2"
+  }
+}

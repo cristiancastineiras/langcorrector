@@ -1,0 +1,51 @@
+[
+  {
+    "id": "grammar-haber",
+    "pattern": "\\bA (sucedido|pasado|ocurrido|producido|ido|sido|estado|tenido|llegado|terminado|hecho|dicho|visto|habido)\\b",
+    "flags": "g",
+    "replacement": "Ha $1",
+    "message": "\"A $1\" probablemente debería ser \"Ha $1\" (verbo haber, no preposición)."
+  },
+  {
+    "id": "grammar-porque",
+    "pattern": "\\bporque\\?",
+    "flags": "g",
+    "replacement": "¿por qué?",
+    "message": "Al final de una pregunta, \"porque\" (causa) casi siempre debería ser \"por qué\"."
+  },
+  {
+    "id": "repeated-word",
+    "pattern": "\\b(\\p{L}+)\\s+\\1\\b",
+    "flags": "giu",
+    "replacement": "$1",
+    "message": "Palabra repetida: \"$1\"."
+  },
+  {
+    "id": "punctuation-question-mark",
+    "pattern": "^([^¿?\\n]*)\\?$",
+    "flags": "g",
+    "replacement": "¿$1?",
+    "message": "Falta el signo de apertura: en español las preguntas se abren con \"¿\"."
+  },
+  {
+    "id": "punctuation-exclamation-mark",
+    "pattern": "^([^¡!\\n]*)!$",
+    "flags": "g",
+    "replacement": "¡$1!",
+    "message": "Falta el signo de apertura: en español las exclamaciones se abren con \"¡\"."
+  },
+  {
+    "id": "punctuation-double-space",
+    "pattern": "  +",
+    "flags": "g",
+    "replacement": " ",
+    "message": "Espacio doble."
+  },
+  {
+    "id": "punctuation-missing-space-after",
+    "pattern": "([,;:])(?=\\p{L})",
+    "flags": "gu",
+    "replacement": "$1 ",
+    "message": "Falta un espacio después de \"$1\"."
+  }
+]

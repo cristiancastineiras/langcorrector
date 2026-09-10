@@ -1,0 +1,17 @@
+{
+  "locale": "en",
+  "displayName": "English",
+  "version": "1.1.0",
+  "license": "permissive (SCOWL/Atkinson wordlist + Kuenning BSD affix file)",
+  "source": "en_US dictionary from https://github.com/LibreOffice/dictionaries (folder en/, en_US.aff + en_US.dic). Wordlist based on Kevin Atkinson's SCOWL under a permissive royalty-free license; affix file derived from Geoff Kuenning's Ispell (BSD license). See ../NOTICE.md.",
+  "files": {
+    "aff": "en_US.aff",
+    "dic": "en_US.dic",
+    "phraseRules": "phrase-rules.json"
+  },
+  "checksums": {
+    "en_US.aff": "65323ae0927d419288a5706e256e3efe6d1778d66b926452c433830366fd6a9f",
+    "en_US.dic": "f0b1a234bd178bdd01875b2a392a9647f888b8fe879f79c52aae62c2759b3647",
+    "phrase-rules.json": "37264bb0b850e0b9a9eca4353d02b19af1b5879e45e1d7be20001837160d48ca"
+  }
+}

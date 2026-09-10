@@ -1,0 +1,28 @@
+{
+  "name": "@langcorrector/pack-loader",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Resuelve un \"pack de idioma\" (diccionario Hunspell + reglas de gramática) desde disco local o, cuando se configura un registry, lo descarga y cachea verificando checksum. Define el formato de pack.json que usan @langcorrector/pack-es y futuros packs.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "oxlint src",
+    "test": "node --test dist/*.test.js",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.2"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@langcorrector/pack-es",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Pack de idioma español para LangCorrector: diccionario Hunspell real (LibreOffice/dictionaries, MPL-1.1, ver NOTICE.md) + reglas de gramática propias en JSON. Es DATA, no código — ver @langcorrector/engine, que es quien la interpreta.",
+  "type": "module",
+  "scripts": {
+    "build": "echo \"(sin build: este paquete es solo datos)\" && exit 0",
+    "dev": "echo \"(sin build: este paquete es solo datos)\" && exit 0",
+    "typecheck": "echo \"(sin TypeScript en este paquete)\" && exit 0",
+    "lint": "echo \"(sin código que lintar)\" && exit 0",
+    "test": "node scripts/verify.mjs",
+    "clean": "echo \"(nada que limpiar: data/ se versiona)\" && exit 0",
+    "checksums": "node scripts/checksums.mjs"
+  },
+  "dependencies": {
+    "@langcorrector/pack-loader": "workspace:*"
+  }
+}

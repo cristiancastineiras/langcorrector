@@ -1,0 +1,19 @@
+{
+  "name": "@langcorrector/pack-fr",
+  "version": "1.1.0",
+  "private": true,
+  "description": "Pack de idioma francés para LangCorrector: diccionario Hunspell fr (LibreOffice/dictionaries, MPL-2.0, ver NOTICE.md) + reglas de gramática propias en JSON. DATA, no código.",
+  "type": "module",
+  "scripts": {
+    "build": "echo \"(sin build: este paquete es solo datos)\" && exit 0",
+    "dev": "echo \"(sin build: este paquete es solo datos)\" && exit 0",
+    "typecheck": "echo \"(sin TypeScript en este paquete)\" && exit 0",
+    "lint": "echo \"(sin código que lintar)\" && exit 0",
+    "test": "node scripts/verify.mjs",
+    "clean": "echo \"(nada que limpiar: data/ se versiona)\" && exit 0",
+    "checksums": "node scripts/checksums.mjs"
+  },
+  "dependencies": {
+    "@langcorrector/pack-loader": "workspace:*"
+  }
+}

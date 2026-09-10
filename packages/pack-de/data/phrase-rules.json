@@ -1,0 +1,30 @@
+[
+  {
+    "id": "grammar-seit-seid",
+    "pattern": "\\bihr seit\\b",
+    "flags": "gi",
+    "replacement": "ihr seid",
+    "message": "\"ihr seit\" ist vermutlich \"ihr seid\" (Verb \"sein\"), nicht die Präposition \"seit\" (seit wann)."
+  },
+  {
+    "id": "repeated-word",
+    "pattern": "\\b(\\p{L}+)\\s+\\1\\b",
+    "flags": "giu",
+    "replacement": "$1",
+    "message": "Wiederholtes Wort: \"$1\"."
+  },
+  {
+    "id": "punctuation-double-space",
+    "pattern": "  +",
+    "flags": "g",
+    "replacement": " ",
+    "message": "Doppeltes Leerzeichen."
+  },
+  {
+    "id": "punctuation-missing-space-after",
+    "pattern": "([,;:])(?=\\p{L})",
+    "flags": "gu",
+    "replacement": "$1 ",
+    "message": "Fehlendes Leerzeichen nach \"$1\"."
+  }
+]

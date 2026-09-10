@@ -1,0 +1,23 @@
+[
+  {
+    "id": "repeated-word",
+    "pattern": "\\b(\\p{L}+)\\s+\\1\\b",
+    "flags": "giu",
+    "replacement": "$1",
+    "message": "Mot répété : « $1 »."
+  },
+  {
+    "id": "punctuation-double-space",
+    "pattern": "  +",
+    "flags": "g",
+    "replacement": " ",
+    "message": "Espace double."
+  },
+  {
+    "id": "punctuation-missing-space-after",
+    "pattern": "([,;:])(?=\\p{L})",
+    "flags": "gu",
+    "replacement": "$1 ",
+    "message": "Espace manquante après « $1 »."
+  }
+]

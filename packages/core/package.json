@@ -1,0 +1,30 @@
+{
+  "name": "@langcorrector/core",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Lógica compartida e independiente del idioma: extracción de literales por AST, heurística de \"¿esto es lenguaje humano?\" y el contrato LanguageCorrector que implementa @langcorrector/engine.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "oxlint src",
+    "test": "node --test dist/*.test.js",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "rimraf": "^6.0.1"
+  }
+}

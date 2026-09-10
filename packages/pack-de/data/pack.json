@@ -1,0 +1,17 @@
+{
+  "locale": "de",
+  "displayName": "Deutsch",
+  "version": "1.1.0",
+  "license": "LGPL-2.1",
+  "source": "de_DE_frami dictionary from https://github.com/LibreOffice/dictionaries (folder de/, de_DE_frami.aff + de_DE_frami.dic, derived from the igerman98 project). Dual-licensed GPLv2/v3 or LGPLv2.0/v2.1 — LangCorrector uses it under LGPL-2.1. Originally ISO-8859-1; re-encoded to UTF-8 for this pack (see NOTICE.md). See ../NOTICE.md.",
+  "files": {
+    "aff": "de_DE.aff",
+    "dic": "de_DE.dic",
+    "phraseRules": "phrase-rules.json"
+  },
+  "checksums": {
+    "de_DE.aff": "c7a7d49f73394c8ffd189e9ebec065ad63f6a3feb15417dbf90b2dc68760227e",
+    "de_DE.dic": "98ebd2e9ff49dcac16316acaa47763768b25c378e66e8f6e5843138fe1482843",
+    "phrase-rules.json": "e4a2606e66dcb9c8104d236f1370b788ab016332718e487f6d41cb4b0c2c557d"
+  }
+}

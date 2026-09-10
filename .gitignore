@@ -1,0 +1,50 @@
+# Dependencias y gestores de paquetes
+node_modules/
+.pnpm-store/
+.npm/
+
+# Artefactos de compilación y empaquetado
+dist/
+out/
+*.tgz
+*.vsix
+*.tsbuildinfo
+
+# Pruebas y cobertura
+coverage/
+.nyc_output/
+test-results/
+
+# Cachés y archivos temporales
+.turbo/
+.cache/
+.eslintcache
+tmp/
+temp/
+*.tmp
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Logs
+*.log
+pnpm-debug.log*
+npm-debug.log*
+
+# Visual Studio Code
+.vscode-test/
+.history/
+
+# Otros IDE
+.idea/
+*.iml
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini

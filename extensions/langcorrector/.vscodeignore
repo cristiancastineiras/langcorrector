@@ -1,0 +1,10 @@
+.vscode/**
+src/**
+scripts/**
+sample/**
+tsconfig.json
+*.tsbuildinfo
+**/*.map
+node_modules/**
+.turbo/**
+pnpm-lock.yaml

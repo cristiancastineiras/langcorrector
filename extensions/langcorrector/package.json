@@ -1,0 +1,123 @@
+{
+  "name": "langcorrector",
+  "displayName": "LangCorrector",
+  "description": "Corrige el lenguaje humano dentro de strings, logs y JSX — sin tocar variables, funciones ni clases. Funciona en TypeScript, JavaScript, C#, Java, Kotlin, Go, Rust, C, C++, Swift, Dart, PHP, Python y Ruby. Español, inglés, francés y alemán incluidos.",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "publisher": "langcorrector",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TU-USUARIO/LangCorrector.git",
+    "directory": "extensions/langcorrector"
+  },
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": ["Linters"],
+  "keywords": [
+    "español",
+    "english",
+    "français",
+    "deutsch",
+    "ortografía",
+    "grammar",
+    "i18n",
+    "spellcheck",
+    "hunspell"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:csharp",
+    "onLanguage:java",
+    "onLanguage:kotlin",
+    "onLanguage:go",
+    "onLanguage:rust",
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:swift",
+    "onLanguage:dart",
+    "onLanguage:php",
+    "onLanguage:python",
+    "onLanguage:ruby"
+  ],
+  "main": "./dist/extension.cjs",
+  "contributes": {
+    "configuration": {
+      "title": "LangCorrector",
+      "properties": {
+        "langcorrector.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Activa o desactiva el análisis."
+        },
+        "langcorrector.language": {
+          "type": "string",
+          "enum": ["es", "en", "fr", "de"],
+          "enumDescriptions": [
+            "Español (pack incluido en la extensión)",
+            "English (pack included with the extension)",
+            "Français (pack inclus avec l'extension)",
+            "Deutsch (Pack in der Extension enthalten)"
+          ],
+          "default": "es",
+          "description": "Idioma del pack de corrección a usar. Un idioma nuevo se añade como pack, sin necesitar una extensión aparte"
+        },
+        "langcorrector.mode": {
+          "type": "string",
+          "enum": ["strict", "ui", "console"],
+          "enumDescriptions": [
+            "Solo strings y JSX.",
+            "Strings, JSX, JSON e i18n.",
+            "Todo lo de \"ui\" más console.log/warn/error."
+          ],
+          "default": "ui",
+          "description": "Qué tipo de literales analizar."
+        },
+        "langcorrector.packRegistryUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Base URL de un registry remoto de packs de idioma (p. ej. los assets de una GitHub Release) para idiomas que no vienen incluidos en la extensión. Vacío = solo se usan los packs bundleados."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "langcorrector.checkDocument",
+        "title": "LangCorrector: Revisar documento actual",
+        "category": "LangCorrector"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "oxlint src",
+    "test": "echo \"(sin tests propios — ver packages/core, packages/engine y packages/pack-loader)\"",
+    "clean": "rimraf dist *.tsbuildinfo *.vsix",
+    "package": "pnpm build && vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@langcorrector/core": "workspace:*",
+    "@langcorrector/engine": "workspace:*",
+    "@langcorrector/pack-loader": "workspace:*"
+  },
+  "devDependencies": {
+    "@langcorrector/pack-de": "workspace:*",
+    "@langcorrector/pack-en": "workspace:*",
+    "@langcorrector/pack-es": "workspace:*",
+    "@langcorrector/pack-fr": "workspace:*",
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.24.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.2"
+  }
+}

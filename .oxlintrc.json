@@ -1,0 +1,10 @@
+{
+  "ignorePatterns": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/*.cjs",
+    "**/.turbo/**",
+    "**/sample/**",
+    "packages/pack-es/data/**"
+  ]
+}
